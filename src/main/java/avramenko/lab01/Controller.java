@@ -3,6 +3,7 @@ package avramenko.lab01;
 import avramenko.lab01.analyzer.Analysis;
 import avramenko.lab01.output.View;
 
+import java.util.TreeMap;
 
 public class Controller {
 
@@ -11,7 +12,7 @@ public class Controller {
         View view = new View();
         int length = view.readNumber(1);
         int elementX = view.readNumber(2);
-        analysis.startAnalysis(length, elementX);
-        view.printResults(length, elementX, analysis);
+        TreeMap<String, Long> treeMap = analysis.startAnalysis(length, elementX);
+        view.printResults(treeMap);
     }
 }

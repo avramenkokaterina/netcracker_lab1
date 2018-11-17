@@ -1,9 +1,8 @@
 package avramenko.lab01.output;
 
-import avramenko.lab01.analyzer.Analysis;
-
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class View {
 
@@ -26,10 +25,10 @@ public class View {
         return number;
     }
 
-    public void printResults(int length, int elementX, Analysis analysis) {
-        for (Map.Entry<String, Long> item : analysis.startAnalysis(length, elementX).entrySet()) {
+    public void printResults(TreeMap<String, Long> treeMap) {
+        for (Map.Entry<String, Long> item : treeMap.entrySet()) {
             System.out.println("Sort and Array: " + item.getKey());
-            System.out.println("Time: " + item.getValue());
+            System.out.println("Time: " + item.getValue() + " nanoseconds");
             System.out.println();
         }
     }
