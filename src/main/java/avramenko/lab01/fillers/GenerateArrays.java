@@ -5,20 +5,29 @@ import java.util.Random;
 
 public class GenerateArrays {
 
-    public int[] generateSortedArray(int length){
-        int[] array = generateRandomArray(length);
-        Arrays.sort(array);
+    private static Random random;
+
+    @Fillers (name = "Sorted Array")
+    public static int[] generateSortedArray(int length) {
+        random = new Random();
+        int[] array = new int[length];
+        array[0] = 1;
+        for (int i = 1; i < length; i++) {
+            array[i] = array[i - 1] + random.nextInt(10);
+        }
         return array;
     }
 
-    public int[] generateArrayX(int length, int element){
+    @Fillers (name = "Sorted array with element X at the end")
+    public static int[] generateArrayX(int length) {
         int[] oldArray = generateSortedArray(length);
-        int[] array = Arrays.copyOf(oldArray, length+1);
-        array[length]=element;
+        int[] array = Arrays.copyOf(oldArray, length + 1);
+        array[length] = random.nextInt(50);
         return array;
     }
 
-    public int[] generateAnotherSortedArray(int length){
+    @Fillers (name = "Reversed Array")
+    public static int[] generateReverseSortedArray(int length) {
         int[] array = generateSortedArray(length);
         int i = 0;
         int j = array.length - 1;
@@ -33,10 +42,11 @@ public class GenerateArrays {
         return array;
     }
 
-    public int[] generateRandomArray(int length){
-        Random random = new Random();
+    @Fillers (name = "Random filled array")
+    public static int[] generateRandomArray(int length) {
+        random = new Random();
         int[] array = new int[length];
-        for (int i=0; i<length; i++)
+        for (int i = 0; i < length; i++)
             array[i] = random.nextInt(99);
         return array;
     }

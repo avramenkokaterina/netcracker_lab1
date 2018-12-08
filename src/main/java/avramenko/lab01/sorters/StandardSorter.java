@@ -2,9 +2,10 @@ package avramenko.lab01.sorters;
 
 import java.util.Arrays;
 
-public class StandardSort {
+public class StandardSorter extends AbstractSorter{
 
-    public int[] standardSort(int[] array){
+    @Override
+    public int[] sort(int[] array){
         Arrays.sort(array);
         return array;
     }
