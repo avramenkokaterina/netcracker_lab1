@@ -11,11 +11,11 @@ public class QuickSorter extends AbstractSorter {
         return array;
     }
 
-    private int[] quickSort(int[] array, int startIndex, int endIndex){
-        if (startIndex<endIndex){
+    private int[] quickSort(int[] array, int startIndex, int endIndex) {
+        if (startIndex < endIndex) {
             int partitioningIndex = partition(array, startIndex, endIndex);
-            quickSort(array, startIndex, partitioningIndex-1);
-            quickSort(array, partitioningIndex+1, endIndex);
+            quickSort(array, startIndex, partitioningIndex - 1);
+            quickSort(array, partitioningIndex + 1, endIndex);
         }
         return array;
     }

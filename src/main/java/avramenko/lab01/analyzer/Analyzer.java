@@ -1,10 +1,13 @@
 package avramenko.lab01.analyzer;
 
-import avramenko.lab01.fillers.*;
-import avramenko.lab01.sorters.*;
+import avramenko.lab01.fillers.ArraysGenerator;
+import avramenko.lab01.fillers.Fillers;
+import avramenko.lab01.sorters.AbstractSorter;
 import org.reflections.Reflections;
 
-import java.lang.reflect.*;
+import java.lang.reflect.Array;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.*;
 
 /**

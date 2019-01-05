@@ -12,7 +12,7 @@ public class MergeSorterBubbleFromBeginning extends MergeSorter {
         int endIndex = array.length - 1;
         int mergeIndex = array.length / 2 - 1;
 
-        int[] tempArray1 = Arrays.copyOfRange(array, startIndex, mergeIndex +1);
+        int[] tempArray1 = Arrays.copyOfRange(array, startIndex, mergeIndex + 1);
         int[] tempArray2 = Arrays.copyOfRange(array, mergeIndex + 1, endIndex + 1);
 
         tempArray1 = bubbleSorterFromBeginning.sort(tempArray1);
