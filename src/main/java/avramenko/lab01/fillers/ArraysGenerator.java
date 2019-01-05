@@ -3,9 +3,25 @@ package avramenko.lab01.fillers;
 import java.util.Arrays;
 import java.util.Random;
 
-public class GenerateArrays {
+/**
+ * <h1>ArraysGenerator</h1>
+ * <p>ArraysGenerator class creating 4 different types of array.</p>
+ * @author Avramenko Kateryna
+ * @version 1.3
+ * @see java.lang.annotation.Annotation
+ * @see Fillers
+ */
+
+public class ArraysGenerator {
 
     private static Random random;
+
+    /**
+     * Generating sorted array by adding to previous element random number.
+     * Annotating with (@code Fillers).
+     * @param length - length of array.
+     * @return sorted array with length length.
+     */
 
     @Fillers (name = "Sorted Array")
     public static int[] generateSortedArray(int length) {
@@ -18,6 +34,13 @@ public class GenerateArrays {
         return array;
     }
 
+    /**
+     * Generating sorted array with one more random element.
+     * Annotating with (@code Fillers).
+     * @param length - length of array.
+     * @return sorted array with one more element at the end with length length.
+     */
+
     @Fillers (name = "Sorted array with element X at the end")
     public static int[] generateArrayX(int length) {
         int[] oldArray = generateSortedArray(length);
@@ -25,6 +48,12 @@ public class GenerateArrays {
         array[length] = random.nextInt(50);
         return array;
     }
+
+    /**Generating sorted and reversed array.
+     * Annotating with (@code Fillers).
+     * @param length - length of array.
+     * @return reversed array with length length.
+     */
 
     @Fillers (name = "Reversed Array")
     public static int[] generateReverseSortedArray(int length) {
@@ -41,6 +70,13 @@ public class GenerateArrays {
         }
         return array;
     }
+
+    /**
+     * Generating random array.
+     * Annotating with (@code Fillers).
+     * @param length - length of array.
+     * @return array with random elements.
+     */
 
     @Fillers (name = "Random filled array")
     public static int[] generateRandomArray(int length) {

@@ -7,7 +7,29 @@ import org.reflections.Reflections;
 import java.lang.reflect.*;
 import java.util.*;
 
-public class Analysis {
+/**
+ * <h1>Analyzer</h1>
+ * <p>The Analyzer class work with all sorts and fillers.
+ * With help of the reflection analyzer gets in method
+ * all children of AbstractSorter {@link AbstractSorter}. With help of the
+ * annotation analyzer gets in method (@code getFillers) all fillers.
+ * Then in foreach it checks sorting time and add this values to TreeMap.</p>
+ * @author Avramenko Kateryna
+ * @version 1.3
+ * @see AbstractSorter
+ * @see TreeMap
+ * @see Reflections
+ * @see java.lang.annotation.Annotation
+ * @see Fillers
+ */
+
+public class Analyzer {
+
+    /**
+     * startAnalysis doing analysis of sorting.
+     * @param length length of entry array
+     * @return TreeMap with sorting name, filler name, array length, sorting time
+     */
 
     public TreeMap<String, Long> startAnalysis(int length) {
         TreeMap<String, Long> treeMap = new TreeMap<>();
@@ -41,10 +63,14 @@ public class Analysis {
         return treeMap;
     }
 
+    /**
+     * getFillers gets all fillers for array with help of the Annotation (@see Fillers)
+     * @return set with all fillers
+     */
     private Set<Method> getFillers(){
         Set<Method> fillersList = new HashSet<>();
 
-        Method[] methods = GenerateArrays.class.getMethods();
+        Method[] methods = ArraysGenerator.class.getMethods();
 
         for (Method method: methods){
             if (method.isAnnotationPresent(Fillers.class)){
@@ -54,6 +80,10 @@ public class Analysis {
         return fillersList;
     }
 
+    /**
+     * getSorters gets all sorters for array with help of the Reflection (@see Reflections)
+     * @return list with all sorting methods
+     */
     private List<AbstractSorter> getSorters(){
         Reflections reflections = new Reflections("avramenko.lab01.sorters");
         Set<Class<? extends AbstractSorter>> classes = reflections.getSubTypesOf(AbstractSorter.class);
