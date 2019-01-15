@@ -18,7 +18,7 @@ public class ArraysGenerator {
 
     /**
      * Generating sorted array by adding to previous element random number.
-     * Annotating with (@code Fillers).
+     * Annotating with {@link Fillers}.
      * @param length - length of array.
      * @return sorted array with length length.
      */
@@ -36,7 +36,7 @@ public class ArraysGenerator {
 
     /**
      * Generating sorted array with one more random element.
-     * Annotating with (@code Fillers).
+     * Annotating with {@link Fillers}.
      * @param length - length of array.
      * @return sorted array with one more element at the end with length length.
      */
@@ -50,7 +50,7 @@ public class ArraysGenerator {
     }
 
     /**Generating sorted and reversed array.
-     * Annotating with (@code Fillers).
+     * Annotating with {@link Fillers}.
      * @param length - length of array.
      * @return reversed array with length length.
      */
@@ -73,7 +73,7 @@ public class ArraysGenerator {
 
     /**
      * Generating random array.
-     * Annotating with (@code Fillers).
+     * Annotating with {@link Fillers}.
      * @param length - length of array.
      * @return array with random elements.
      */

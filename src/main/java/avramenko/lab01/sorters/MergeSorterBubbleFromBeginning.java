@@ -2,8 +2,30 @@ package avramenko.lab01.sorters;
 
 import java.util.Arrays;
 
+/**
+ * <h1>MergeSorterBubbleFromBeginning</h1>
+ * <p>The MergeSorterBubbleFromBeginning is a child of abstract class {@link MergeSorter}.
+ *  * This class implements abstract method {@link MergeSorter#sort(int[])} by using bubble sort from
+ *  * first element. </p>
+ *
+ * @author Avramenko Kateryna
+ * @version 1.3
+ * @see AbstractSorter
+ * @see MergeSorterBubbleFromBeginning
+ * @see MergeSorterBubbleFromEnd
+ * @see MergeSorterQuick
+ * @see MergeSorterQuick
+ * @see MergeSorterStandard
+ */
 public class MergeSorterBubbleFromBeginning extends MergeSorter {
 
+    /**
+     * This method divides entry array on two arrays. Then this two arrays are sorted by
+     * {@link BubbleSorterFromBeginning#sort(int[])} and then {@link MergeSorter#merge(int[], int[], int, int)}
+     * method merge two arrays in one.
+     * @param array is entry array which is have to be sorted.
+     * @return sorted array
+     */
     @Override
     public int[] sort(int[] array) {
         BubbleSorterFromBeginning bubbleSorterFromBeginning = new BubbleSorterFromBeginning();

@@ -24,8 +24,18 @@ import java.util.regex.Pattern;
 
 import static avramenko.lab01.fillers.LengthGenerator.generateLength;
 
+/**
+ * The ExcelOutput class creates report in Excel with help of the apache.poi library.
+ * @author Avramenko Kateryna
+ * @version 1.3
+ * @see AbstractSorter
+ */
 public class ExcelOutput {
-
+    /**
+     * This method creates .xlsx document with 4 sheets. Also it adds to every sheet spreadsheet, where columns are
+     * sorter types and rows are length of array. That spreadsheets consist time of sorting for different array
+     * and different lengths.
+     */
     public void reportCreation() {
         List<String> fillersNames = getFillers();
 
@@ -73,6 +83,11 @@ public class ExcelOutput {
         }
     }
 
+    /**
+     * This method create chart, based on result spreadsheet from {@link ExcelOutput#reportCreation()} method.
+     * @param sheet in which sheet chart has to be created
+     * @param data spreadsheet with sort time, sort names and lengths.
+     */
     private void createChart(XSSFSheet sheet, Object[][] data) {
         XSSFDrawing xlsxDrawing = sheet.createDrawingPatriarch();
         XSSFClientAnchor anchor = xlsxDrawing.createAnchor(0, 0, 0, 0, 10, 0, 19, 20);
@@ -121,6 +136,11 @@ public class ExcelOutput {
         lineChart.plot(dataChart, new ChartAxis[]{bottomAxis, leftAxis});
     }
 
+    /**
+     * This method get sorter names, lengths for columns and rows in spreadsheets.
+     * @param filler name of array filler
+     * @return data array
+     */
     private Object[][] createData(String filler) {
         Object[][] time = new Object[14][9];
 
@@ -153,6 +173,11 @@ public class ExcelOutput {
         return time;
     }
 
+    /**
+     * This method get sorting time for current array filler.
+     * @param filler name of array filler
+     * @return array with sorting time
+     */
     private long[] getDataForCurrentFiller(String filler) {
         long[] currentFillerResult = new long[104];
         TreeMap<String, Long> treeMap;
@@ -173,6 +198,10 @@ public class ExcelOutput {
         return currentFillerResult;
     }
 
+    /**
+     * getFillers gets all fillers for array with help of the Annotation {@link Fillers}
+     * @return set with all fillers
+     */
     private List<String> getFillers() {
         Set<Method> fillersList = new HashSet<>();
 
@@ -191,6 +220,10 @@ public class ExcelOutput {
         return fillersName;
     }
 
+    /**
+     * getSorters gets all sorters for array with help of the Reflection (@see Reflections)
+     * @return list with all sorting methods
+     */
     private List<String> getSorters() {
         Reflections reflections = new Reflections("avramenko.lab01.sorters");
         Set<Class<? extends AbstractSorter>> classes = reflections.getSubTypesOf(AbstractSorter.class);
