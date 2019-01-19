@@ -11,6 +11,7 @@ import java.util.Arrays;
  * @version 1.3
  * @see AbstractSorter
  */
+
 public class StandardSorter extends AbstractSorter {
 
     /**
