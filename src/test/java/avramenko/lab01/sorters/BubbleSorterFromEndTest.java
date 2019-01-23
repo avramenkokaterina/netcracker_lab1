@@ -14,8 +14,8 @@ public class BubbleSorterFromEndTest {
             testArray[i] = random.nextInt();
         }
         BubbleSorterFromEnd bubbleSorterFromEnd = new BubbleSorterFromEnd();
-        bubbleSorterFromEnd.sort(testArray);
-        return testArray;
+        int[] result = bubbleSorterFromEnd.sort(testArray);
+        return result;
     }
 
     @Test

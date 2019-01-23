@@ -16,8 +16,8 @@ public class QuickSorterTest {
             testArray[i] = random.nextInt();
         }
         QuickSorter quickSorter = new QuickSorter();
-        quickSorter.sort(testArray);
-        return testArray;
+        int[] result = quickSorter.sort(testArray);
+        return result;
     }
 
     @Test

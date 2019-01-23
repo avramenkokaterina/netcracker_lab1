@@ -14,8 +14,8 @@ public class MergeSorterStandardTest {
             testArray[i] = random.nextInt();
         }
         MergeSorterStandard mergeSorterStandard = new MergeSorterStandard();
-        mergeSorterStandard.sort(testArray);
-        return testArray;
+        int[] result = mergeSorterStandard.sort(testArray);
+        return result;
     }
 
     @Test

@@ -16,8 +16,8 @@ public class StandardSorterTest {
             testArray[i] = random.nextInt();
         }
         StandardSorter standardSorter = new StandardSorter();
-        standardSorter.sort(testArray);
-        return testArray;
+        int[] result = standardSorter.sort(testArray);
+        return result;
     }
 
     @Test

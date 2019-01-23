@@ -14,8 +14,8 @@ public class MergeSorterBubbleFromEndTest {
             testArray[i] = random.nextInt();
         }
         MergeSorterBubbleFromEnd mergeSorterBubbleFromEnd = new MergeSorterBubbleFromEnd();
-        mergeSorterBubbleFromEnd.sort(testArray);
-        return testArray;
+        int[] result =mergeSorterBubbleFromEnd.sort(testArray);
+        return result;
     }
 
     @Test
